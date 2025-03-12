@@ -1,0 +1,15 @@
+---
+name: "Run Nextshell themes preview generator"
+command: "python3 ./scripts/gen_theme_previews.py {{directory}}"
+tags:
+  - khulnasoft
+  - khulnasoft-dx
+description: "Run Nextshell themes preview generator"
+arguments:
+  - name: directory
+    description: The directory to generate themes for
+    default_value: standard
+source_url: "https://nextshell.dev"
+author: elviskahoro
+author_url: "https://elvis.ai"
+shells: []
