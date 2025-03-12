@@ -11,6 +11,6 @@ anyhow = "1.0"
 convert_case = "0.4.0"
 memmap = "0.7.0"
 serde_yaml = "0.8"
-uneval = {git = "https://github.com/khulnasoft/uneval", rev = "df4d9fad372aedc447e6f93ca0f930fabaf9dd1a"}
+uneval = {git = "https://github.com/forkwork/uneval", rev = "df4d9fad372aedc447e6f93ca0f930fabaf9dd1a"}
 walkdir = "2.3.2"
 nextshell-workflows-types = {path = "../workflow-types" }

@@ -17,7 +17,7 @@ if ! command -v cargo; then
 fi
 
 cargo install cargo-bundle
-cargo install cargo-diff-tools --git https://github.com/khulnasoft/cargo-diff-tools
+cargo install cargo-diff-tools --git https://github.com/forkwork/cargo-diff-tools
 
 # Update brew
 brew update

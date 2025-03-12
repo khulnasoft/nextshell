@@ -1,11 +1,11 @@
 use anyhow::Result;
 use convert_case::{Case, Casing};
+use nextshell_workflows_types::Workflow;
 use std::ffi::OsStr;
 use std::fs::File;
 use std::io::Write;
 use std::process::Command;
 use walkdir::WalkDir;
-use nextshell_workflows_types::Workflow;
 
 /// Generates Workflows as rust files from the yaml stored in /specs. Each Workflow is stored within
 /// its own mod within the `generated_workflows` module. Additionally, a function called `workflows`
