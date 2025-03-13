@@ -18,7 +18,8 @@ jobs:
       - test
       - doc
     steps:
-      - run: exit 0
+      - name: Verify CI Success
+        run: echo "CI passed successfully!"
 
   style:
     name: Check Style
