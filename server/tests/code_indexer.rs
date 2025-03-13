@@ -11,8 +11,13 @@ fn test_code_indexer_new() {
 fn test_code_indexer_index_code() {
     let mut indexer = CodeIndexer::new();
     indexer.index_code("fn main() {}");
-    assert_eq!(indexer.index.len(), 1);
-    assert_eq!(indexer.index.get("12"), Some(&"fn main() {}".to_string()));
+fn test_code_indexer_index_code() {
+    let mut indexer = CodeIndexer::new();
+    indexer.index_code("fn main() {}");
+    let suggestions = indexer.suggest("main");
+    assert_eq!(suggestions.len(), 1);
+    assert_eq!(suggestions[0], "fn main() {}");
+}
 }
 
 #[test]
