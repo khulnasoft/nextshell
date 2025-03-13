@@ -26,9 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
-        with:
-          path: ./server
+        uses: actions/checkout@v4
 
       - name: Install Rust Toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -37,7 +35,6 @@ jobs:
 
       - name: Run Rust Format Check
         run: cargo fmt --all --check
-        working-directory: ./server
 
   test:
     name: Run Tests
@@ -60,23 +57,19 @@ jobs:
             features: "--features compression"
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
-        with:
-          path: ./server
+        uses: actions/checkout@v4
 
       - name: Install Rust Toolchain
-        uses: dtolnay/rust-toolchain@master
+        uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: ${{ matrix.rust || 'stable' }}
 
       - name: Run Tests
         run: cargo test ${{ matrix.features }}
-        working-directory: ./server
 
       - name: Run Benchmark Tests
         if: matrix.benches
         run: cargo test --benches ${{ matrix.features }}
-        working-directory: ./server
 
   doc:
     name: Build Documentation
@@ -84,13 +77,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
-        with:
-          path: ./server
+        uses: actions/checkout@v4
 
-      - name: Install Rust Toolchain (Nightly)
+      - name: Install Rust Toolchain
         uses: dtolnay/rust-toolchain@nightly
 
       - name: Generate Documentation
         run: cargo rustdoc -- -D broken_intra_doc_links
-        working-directory: ./server
