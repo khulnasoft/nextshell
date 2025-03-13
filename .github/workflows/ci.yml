@@ -28,7 +28,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          path: server
+          path: ./server
 
       - name: Install Rust Toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -37,7 +37,7 @@ jobs:
 
       - name: Run Rust Format Check
         run: cargo fmt --all --check
-        working-directory: server
+        working-directory: ./server
 
   test:
     name: Run Tests
@@ -62,7 +62,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          path: server
+          path: ./server
 
       - name: Install Rust Toolchain
         uses: dtolnay/rust-toolchain@master
@@ -71,12 +71,12 @@ jobs:
 
       - name: Run Tests
         run: cargo test ${{ matrix.features }}
-        working-directory: server
+        working-directory: ./server
 
       - name: Run Benchmark Tests
         if: matrix.benches
         run: cargo test --benches ${{ matrix.features }}
-        working-directory: server
+        working-directory: ./server
 
   doc:
     name: Build Documentation
@@ -86,11 +86,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          path: server
+          path: ./server
 
       - name: Install Rust Toolchain (Nightly)
         uses: dtolnay/rust-toolchain@nightly
 
       - name: Generate Documentation
         run: cargo rustdoc -- -D broken_intra_doc_links
-        working-directory: server
+        working-directory: ./server
