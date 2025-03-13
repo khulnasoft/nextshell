@@ -34,3 +34,18 @@ fn test_code_indexer_suggest() {
     let suggestions = indexer.suggest("fn");
     assert_eq!(suggestions.len(), 2);
 }
+
+#[test]
+fn test_code_indexer_collision() {
+    let mut indexer = CodeIndexer::new();
+    // Both snippets have the same length (12 characters)
+    indexer.index_code("fn main() {}");
+    indexer.index_code("fn test() {}");
+    
+    // With the current implementation, only the second one would be stored
+    let suggestions = indexer.suggest("main");
+    
+    // This will fail with the current implementation, proving there's a collision issue
+    assert_eq!(suggestions.len(), 1);
+    assert_eq!(suggestions[0], "fn main() {}");
+}
