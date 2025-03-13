@@ -4,7 +4,10 @@ use std::collections::HashMap;
 #[test]
 fn test_code_indexer_new() {
     let indexer = CodeIndexer::new();
-    assert!(indexer.index.is_empty());
+fn test_code_indexer_new() {
+    let indexer = CodeIndexer::new();
+    assert_eq!(indexer.suggest("any_query").len(), 0);
+}
 }
 
 #[test]
