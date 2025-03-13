@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use md5;
 
 pub struct CodeIndexer {
     index: HashMap<String, String>,
