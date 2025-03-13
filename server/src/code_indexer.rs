@@ -12,8 +12,9 @@ impl CodeIndexer {
     }
 
     pub fn index_code(&mut self, code: &str) {
-        // Simple indexing logic: store the code with its length as the key
-        self.index.insert(code.len().to_string(), code.to_string());
+        // Use a unique identifier for the code snippet instead of length
+        let key = format!("{:x}", md5::compute(code));
+        self.index.insert(key, code.to_string());
     }
 
     pub fn suggest(&self, query: &str) -> Vec<String> {
