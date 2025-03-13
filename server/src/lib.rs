@@ -100,6 +100,7 @@ pub mod test;
 #[cfg(feature = "tls")]
 mod tls;
 mod transport;
+mod code_indexer; // P3832
 
 pub use self::error::Error;
 pub use self::filter::Filter;
@@ -147,6 +148,7 @@ pub use self::filters::{
     trace,
     // trace() function
     trace::trace,
+    code_indexer::code_index, // P3832
 };
 // ws() function
 pub use self::filter::wrap_fn;
