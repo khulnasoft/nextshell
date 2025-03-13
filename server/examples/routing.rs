@@ -18,7 +18,8 @@ async fn main() {
     // How about multiple segments? First, we could use the `path!` macro:
     //
     // GET /hello/from/nextshell
-    let hello_from_nextshell = nextshell::path!("hello" / "from" / "nextshell").map(|| "Hello from nextshell!");
+    let hello_from_nextshell =
+        nextshell::path!("hello" / "from" / "nextshell").map(|| "Hello from nextshell!");
 
     // Fine, but how do I handle parameters in paths?
     //

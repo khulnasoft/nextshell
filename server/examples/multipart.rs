@@ -5,7 +5,7 @@ use nextshell::Filter;
 
 #[tokio::main]
 async fn main() {
-    // Running curl -F file=@.gitignore 'localhost:3030/' should print [("file", ".gitignore", "\n/target\n**/*.rs.bk\nCargo.lock\n.idea/\nwarp.iml\n")]
+    // Running curl -F file=@.gitignore 'localhost:3030/' should print [("file", ".gitignore", "\n/target\n**/*.rs.bk\nCargo.lock\n.idea/\nnextshell.iml\n")]
     let route = nextshell::multipart::form().and_then(|form: FormData| async move {
         let field_names: Vec<_> = form
             .and_then(|mut field| async move {

@@ -1,9 +1,9 @@
 #![deny(warnings)]
 
+use nextshell::Filter;
 use std::convert::Infallible;
 use std::str::FromStr;
 use std::time::Duration;
-use nextshell::Filter;
 
 #[tokio::main]
 async fn main() {

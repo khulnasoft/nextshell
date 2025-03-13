@@ -5,7 +5,9 @@ use nextshell::{filters::BoxedFilter, Filter, Rejection, Reply};
 // Boxing the filters will use dynamic dispatch and speed up compilation while
 // making it slightly slower at runtime.
 pub fn assets_filter() -> BoxedFilter<(impl Reply,)> {
-    nextshell::path("assets").and(nextshell::fs::dir("./assets")).boxed()
+    nextshell::path("assets")
+        .and(nextshell::fs::dir("./assets"))
+        .boxed()
 }
 
 // Option 2: impl Filter + Clone

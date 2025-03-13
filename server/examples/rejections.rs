@@ -4,34 +4,34 @@ use std::convert::Infallible;
 use std::error::Error;
 use std::num::NonZeroU16;
 
-use serde_derive::{Deserialize, Serialize};
 use nextshell::http::StatusCode;
 use nextshell::{reject, Filter, Rejection, Reply};
+use serde_derive::{Deserialize, Serialize};
 
 /// Rejections represent cases where a filter should not continue processing
 /// the request, but a different filter *could* process it.
 #[tokio::main]
 async fn main() {
     let math = nextshell::path!("math" / u16);
-    let div_with_header = math
-        .and(nextshell::get())
-        .and(div_by())
-        .map(|num: u16, denom: NonZeroU16| {
-            nextshell::reply::json(&Math {
-                op: format!("{} / {}", num, denom),
-                output: num / denom.get(),
-            })
-        });
-
-    let div_with_body =
-        math.and(nextshell::post())
-            .and(nextshell::body::json())
-            .map(|num: u16, body: DenomRequest| {
+    let div_with_header =
+        math.and(nextshell::get())
+            .and(div_by())
+            .map(|num: u16, denom: NonZeroU16| {
                 nextshell::reply::json(&Math {
-                    op: format!("{} / {}", num, body.denom),
-                    output: num / body.denom.get(),
+                    op: format!("{} / {}", num, denom),
+                    output: num / denom.get(),
                 })
             });
+
+    let div_with_body = math
+        .and(nextshell::post())
+        .and(nextshell::body::json())
+        .map(|num: u16, body: DenomRequest| {
+            nextshell::reply::json(&Math {
+                op: format!("{} / {}", num, body.denom),
+                output: num / body.denom.get(),
+            })
+        });
 
     let routes = div_with_header.or(div_with_body).recover(handle_rejection);
 

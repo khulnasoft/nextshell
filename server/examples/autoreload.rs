@@ -1,8 +1,8 @@
 #![deny(warnings)]
 use hyper::server::Server;
 use listenfd::ListenFd;
-use std::convert::Infallible;
 use nextshell::Filter;
+use std::convert::Infallible;
 
 /// You'll need to install `systemfd` and `cargo-watch`:
 /// ```

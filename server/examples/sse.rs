@@ -1,9 +1,9 @@
 use futures_util::StreamExt;
+use nextshell::{sse::Event, Filter};
 use std::convert::Infallible;
 use std::time::Duration;
 use tokio::time::interval;
 use tokio_stream::wrappers::IntervalStream;
-use nextshell::{sse::Event, Filter};
 
 // create server-sent event
 fn sse_counter(counter: u64) -> Result<Event, Infallible> {

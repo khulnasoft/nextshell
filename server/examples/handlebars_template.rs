@@ -2,9 +2,9 @@
 use std::sync::Arc;
 
 use handlebars::Handlebars;
+use nextshell::Filter;
 use serde::Serialize;
 use serde_json::json;
-use nextshell::Filter;
 
 struct WithTemplate<T: Serialize> {
     name: &'static str,
