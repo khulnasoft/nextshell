@@ -1,6 +1,5 @@
 [workspace]
 members = [
-    "workflows",
     "server",
 ]
 resolver = "2"
