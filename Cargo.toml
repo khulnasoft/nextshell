@@ -1,2 +1,2 @@
 [workspace]
-members = ["server"]
+members = ["workflow-types", "workflows/workflow-types", "nextshell"]
