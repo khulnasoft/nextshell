@@ -26,7 +26,7 @@ async fn main() {
     let template = "<!DOCTYPE html>
                     <html>
                       <head>
-                        <title>Nextshell Handlebars template example</title>
+                        <title>Warp Handlebars template example</title>
                       </head>
                       <body>
                         <h1>Hello {{user}}!</h1>
@@ -50,7 +50,7 @@ async fn main() {
         .and(nextshell::path::end())
         .map(|| WithTemplate {
             name: "template.html",
-            value: json!({"user" : "Nextshell"}),
+            value: json!({"user" : "Warp"}),
         })
         .map(handlebars);
 

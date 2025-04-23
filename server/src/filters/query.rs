@@ -58,7 +58,7 @@ use crate::reject::{self, Rejection};
 ///     });
 /// ```
 ///
-/// For more examples, please take a look at [examples/query_string.rs](https://github.com/khulnasoft/nextshell/blob/master/examples/query_string.rs).
+/// For more examples, please take a look at [examples/query_string.rs](https://github.com/seanmonstar/nextshell/blob/master/examples/query_string.rs).
 ///
 /// [Serde]: https://docs.rs/serde
 pub fn query<T: DeserializeOwned + Send + 'static>(

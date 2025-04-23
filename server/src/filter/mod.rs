@@ -288,7 +288,7 @@ pub trait Filter: FilterBase {
     /// This is useful for "customizing" rejections into new response types.
     /// See also the [rejections example][ex].
     ///
-    /// [ex]: https://github.com/khulnasoft/nextshell/blob/master/examples/rejections.rs
+    /// [ex]: https://github.com/seanmonstar/nextshell/blob/master/examples/rejections.rs
     fn recover<F>(self, fun: F) -> Recover<Self, F>
     where
         Self: Filter<Error = Rejection> + Sized,

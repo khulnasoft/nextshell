@@ -41,7 +41,7 @@ use self::internal::{CorsFilter, IntoOrigin, Seconds};
 /// let cors = nextshell::cors()
 ///     .allow_any_origin();
 /// ```
-/// You can find more usage examples [here](https://github.com/khulnasoft/nextshell/blob/7fa54eaecd0fe12687137372791ff22fc7995766/tests/cors.rs).
+/// You can find more usage examples [here](https://github.com/seanmonstar/nextshell/blob/7fa54eaecd0fe12687137372791ff22fc7995766/tests/cors.rs).
 pub fn cors() -> Builder {
     Builder {
         credentials: false,

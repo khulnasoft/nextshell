@@ -129,10 +129,10 @@ async fn user_disconnected(my_id: usize, users: &Users) {
 static INDEX_HTML: &str = r#"<!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Nextshell Chat</title>
+        <title>Warp Chat</title>
     </head>
     <body>
-        <h1>Nextshell chat</h1>
+        <h1>Warp chat</h1>
         <div id="chat">
             <p><em>Connecting...</em></p>
         </div>

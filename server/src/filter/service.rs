@@ -30,7 +30,7 @@ use crate::{Filter, Request};
 /// use nextshell::Filter;
 ///
 /// // Our Filter...
-/// let route = nextshell::any().map(|| "Hello From Nextshell!");
+/// let route = nextshell::any().map(|| "Hello From Warp!");
 ///
 /// // Convert it into a `Service`...
 /// let svc = nextshell::service(route);

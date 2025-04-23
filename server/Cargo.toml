@@ -1,11 +1,10 @@
 [package]
 name = "nextshell"
-version = "0.1.1"
+version = "0.3.7"
 description = "serve the web at nextshell speeds"
-authors = ["Md Sulaiman <info@khulnasoft.com>"]
+authors = ["Md Sulaiman <dev.sulaiman@icloud.com>"]
 license = "MIT"
 readme = "README.md"
-documentation = "https://docs.rs/nextshell"
 repository = "https://github.com/khulnasoft/nextshell"
 categories = ["web-programming::http-server"]
 keywords = ["nextshell", "server", "http", "hyper"]

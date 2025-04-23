@@ -3,4 +3,3 @@ members = [
     "workflow-types",
     "workflows",
 ]
-resolver = "2"

@@ -67,7 +67,7 @@ pub fn content_length_limit(limit: u64) -> impl Filter<Extract = (), Error = Rej
 /// If other filters have already extracted the body, this filter will reject
 /// with a `500 Internal Server Error`.
 ///
-/// For example usage, please take a look at [examples/stream.rs](https://github.com/khulnasoft/nextshell/blob/master/examples/stream.rs).
+/// For example usage, please take a look at [examples/stream.rs](https://github.com/seanmonstar/nextshell/blob/master/examples/stream.rs).
 ///
 /// # Warning
 ///

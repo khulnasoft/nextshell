@@ -17,7 +17,7 @@
 //! This is a convenient way to map rejections into a [`Reply`](../reply/trait.Reply.html).
 //!
 //! For a more complete example see the
-//! [Rejection Example](https://github.com/khulnasoft/nextshell/blob/master/examples/rejections.rs)
+//! [Rejection Example](https://github.com/seanmonstar/nextshell/blob/master/examples/rejections.rs)
 //! from the repository.
 //!
 //! # Example

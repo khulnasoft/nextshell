@@ -32,14 +32,14 @@ where
     }
 }
 
-/// A Nextshell Server ready to filter requests.
+/// A Warp Server ready to filter requests.
 #[derive(Debug)]
 pub struct Server<F> {
     pipeline: bool,
     filter: F,
 }
 
-/// A Nextshell Server ready to filter requests over TLS.
+/// A Warp Server ready to filter requests over TLS.
 ///
 /// *This type requires the `"tls"` feature.*
 #[cfg(feature = "tls")]

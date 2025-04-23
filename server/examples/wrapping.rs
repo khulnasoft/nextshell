@@ -24,8 +24,8 @@ async fn main() {
         .map(|| "hello world")
         .boxed()
         .recover(|_err| async { Ok("recovered") })
-        // nextshell the filter with hello_wrapper
-        .with(nextshell::nextshell_fn(hello_wrapper));
+        // wrap the filter with hello_wrapper
+        .with(nextshell::wrap_fn(hello_wrapper));
 
     nextshell::serve(routes).run(([127, 0, 0, 1], 3030)).await;
 }

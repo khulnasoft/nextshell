@@ -38,7 +38,7 @@ where
 ///     .with(nextshell::wrap_fn(|filter| filter));
 /// ```
 ///
-/// You can find the full example in the [usage example](https://github.com/khulnasoft/nextshell/blob/master/examples/wrapping.rs).
+/// You can find the full example in the [usage example](https://github.com/seanmonstar/nextshell/blob/master/examples/wrapping.rs).
 pub fn wrap_fn<F, T, U>(func: F) -> WrapFn<F>
 where
     F: Fn(T) -> U,

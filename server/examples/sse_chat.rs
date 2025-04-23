@@ -127,7 +127,7 @@ static INDEX_HTML: &str = r#"
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Nextshell Chat</title>
+        <title>Warp Chat</title>
     </head>
     <body>
         <h1>nextshell chat</h1>

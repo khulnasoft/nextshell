@@ -2,7 +2,7 @@
 //!
 //! [`tracing`] is a framework for instrumenting Rust programs to
 //! collect scoped, structured, and async-aware diagnostics. This module
-//! provides a set of filters for instrumenting Nextshell applications with `tracing`
+//! provides a set of filters for instrumenting Warp applications with `tracing`
 //! spans. [`Spans`] can be used to associate individual events  with a request,
 //! and track contexts through the application.
 //!
