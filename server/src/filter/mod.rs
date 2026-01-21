@@ -34,6 +34,8 @@ use self::untuple_one::UntupleOne;
 pub use self::wrap::wrap_fn;
 pub(crate) use self::wrap::{Wrap, WrapSealed};
 
+use crate::code_indexer::code_index; // P11e3
+
 // A crate-private base trait, allowing the actual `filter` method to change
 // signatures without it being a breaking change.
 pub trait FilterBase {
@@ -90,6 +92,18 @@ pub struct Internal;
 /// `and`, where one extracted `()`, and another `String`, would mean the
 /// `map` would be given a single argument of `((), String,)`, which is just
 /// no fun.
+///
+/// Even worse, the tuples would shuffle the types around depending on
+/// the exact invocation of `and`s. So, `unit.and(int).and(int)` would
+/// result in a different extracted type from `unit.and(int.and(int))`,
+/// or from `int.and(unit).and(int)`. If you changed around the order
+/// of filters, while still having them be semantically equivalent, you'd
+/// need to update all your `map`s as well.
+///
+/// `Product`, `HList`, and `Func` do all the heavy work so that none of
+/// this is a bother to you. What's more, the types are enforced at
+/// compile-time, and tuple flattening is optimized away to nothing by
+/// LLVM.
 pub trait Filter: FilterBase {
     /// Composes a new `Filter` that requires both this and the other to filter a request.
     ///
